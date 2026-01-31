@@ -1,4 +1,4 @@
-# enfiltool
+# endfield-tool
 
 ## 엔드필드 툴
 
@@ -6,4 +6,4 @@
 
 ## 노션 페이지
 
-- https://www.notion.so/enfil-tool-2f859c7e40ad805b8d5bcdf56fc38905?source=copy_link
+- https://www.notion.so/endfield-tool-2f859c7e40ad805b8d5bcdf56fc38905
