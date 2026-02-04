@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Noto_Sans_KR } from "next/font/google";
 
 const notoSansKr = Noto_Sans_KR({
-  subsets: ["latin"],
   weight: ["400", "700"],
 });
 
@@ -22,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <body
-        className={`${notoSansKr.className} antialiased min-h-screen bg-zinc-50 font-sans dark:bg-gray-800 w-full`}
+        className={`${notoSansKr.className} antialiased min-h-screen bg-zinc-100 dark:bg-gray-800 w-full`}
       >
         <ThemeProvider>
           <GNB />

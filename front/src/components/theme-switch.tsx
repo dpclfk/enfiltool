@@ -39,13 +39,9 @@ export function ThemeSwitch() {
         <Button
           variant="ghost"
           size="icon"
-          className="hover:shadow-md focus-visible:ring-0"
+          className="hover:shadow-md focus-visible:ring-0 h-[3rem] w-[3rem]"
         >
-          {resolvedTheme === "dark" ? (
-            <Moon className="h-5 w-5" />
-          ) : (
-            <Sun className="h-5 w-5" />
-          )}
+          {resolvedTheme === "dark" ? <Moon /> : <Sun />}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
