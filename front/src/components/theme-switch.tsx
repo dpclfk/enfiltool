@@ -9,9 +9,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Check, Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function ThemeSwitch() {
   const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // 마운트 후에만 UI를 그리기
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const Item = ({
     t,
@@ -41,7 +48,15 @@ export function ThemeSwitch() {
           size="icon"
           className="hover:shadow-md focus-visible:ring-0 h-[3rem] w-[3rem]"
         >
-          {resolvedTheme === "dark" ? <Moon /> : <Sun />}
+          {mounted ? (
+            resolvedTheme === "dark" ? (
+              <Moon />
+            ) : (
+              <Sun />
+            )
+          ) : (
+            <div className="w-4 h-4" />
+          )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

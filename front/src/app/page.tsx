@@ -1,11 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Noto_Serif_KR } from "next/font/google";
+import { notoserifsKr } from "@/style/fonts";
 
-const nototest = Noto_Serif_KR({
-  weight: ["700"],
-});
-const buttonbase = `${nototest.className} h-10 px-4 hover:shadow-md focus-visible:ring-0 text-base`;
+const buttonbase = `${notoserifsKr.className} h-10 px-4 hover:shadow-md focus-visible:ring-0 text-base`;
 
 export default function Home() {
   return (

@@ -1,9 +1,5 @@
-import { Nanum_Brush_Script } from "next/font/google";
+import { nanum_brush } from "@/style/fonts";
 import { ThemeSwitch } from "./theme-switch";
-
-const nanum_brush = Nanum_Brush_Script({
-  weight: "400",
-});
 
 export default function GNB() {
   return (

@@ -2,11 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import GNB from "@/components/global-nav-bar";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Noto_Sans_KR } from "next/font/google";
-
-const notoSansKr = Noto_Sans_KR({
-  weight: ["400", "700"],
-});
+import { notoSansKr } from "@/style/fonts";
 
 export const metadata: Metadata = {
   title: "endfield tool",
@@ -21,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <body
-        className={`${notoSansKr.className} antialiased min-h-screen bg-zinc-100 dark:bg-gray-800 w-full`}
+        className={`${notoSansKr.className} font-normal antialiased min-h-screen bg-zinc-100 dark:bg-gray-800 w-full`}
       >
         <ThemeProvider>
           <GNB />
