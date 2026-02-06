@@ -6,12 +6,24 @@ import * as cookieParser from 'cookie-parser';
 import { HttpExceptionFilter } from './filter/http-exception/http-exception.filter';
 import { MysqlErrFilter } from './filter/mysql-err/mysql-err.filter';
 import { TypeErrFilter } from './filter/type-err/type-err.filter';
+import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const configService = app.get(ConfigService);
 
   const port = parseInt(configService.get<string>('PORT') || '3000');
+
+  // dto에서 타입이 잘못되면 안되게 막음
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      transform: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
+    }),
+  );
 
   // 리프레시토큰을 쿠키에 저장하기위해 사용
   app.use(cookieParser(process.env.COOKIE_SECRET));

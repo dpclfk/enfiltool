@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -13,6 +12,9 @@ import { Region } from './entities/region.entity';
 import { RegionalProduct } from './entities/regional-product.entity';
 import { RegionModule } from './region/region.module';
 import { RegionalProductModule } from './regional-product/regional-product.module';
+import { Users } from './entities/users.entity';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -33,11 +35,15 @@ import { RegionalProductModule } from './regional-product/regional-product.modul
       ProductionType,
       Region,
       RegionalProduct,
+      Users,
     ]),
     RegionModule,
     RegionalProductModule,
+    AuthModule,
+
+    UsersModule,
   ],
-  controllers: [AppController],
+  controllers: [],
   providers: [AppService],
 })
 export class AppModule {}
